@@ -1,0 +1,636 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cringer - Sign up</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="../Javascript/OverlayText.js"></script>
+    <script src="../Javascript/HubImages.js"></script>
+    <script src="../Javascript/Ajax/changePic.js"></script>
+    <script src="../Javascript/KonamiCode.js"></script>
+	
+	<script>
+		
+		function setColor(_btn,_drop)
+		{
+			var btn = _btn;
+			var dropdown_c = _drop;
+
+			var property = document.getElementById(btn);
+			
+			var x = document.getElementById(dropdown_c);
+				
+	  
+			if (property.style.backgroundColor == "black") {
+				property.style.backgroundColor = "rgb(210,210,210)"
+				x.style.display = "block";
+				property.style.color = "black";
+				property.style.textShadow = "2px 2px 2px white"
+			}
+			else {
+				property.style.backgroundColor = "black"
+				x.style.display = "none";
+				property.style.color = "white";
+				property.style.textShadow = "2px 2px 2px black"
+			}
+		}
+	</script>
+	<Style>
+        body {
+            background-color: white;
+			font-family: 'CupiddeLocke';
+        }
+
+        .footer {
+            background-color:rgb(25,25,112);
+            position: fixed;
+            bottom: 0;
+            width: 100vw;
+            height: 5vh;
+            color: white;
+            text-align: right;
+            padding-top: 1.5vh;
+            font-size: 1.5vh;
+            padding-right: 2vw;
+        }
+
+        .footer > a {
+            color: rgb(230, 230, 230);
+            text-shadow: black;
+        }
+
+        .navbar {
+            background-color: white;
+            height: 10vh;
+            width: 100vw;
+			border:3px solid rgb(30,144,255);
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+		
+		.image_nav
+		{
+			width:13vw;
+			height:8vh;
+		}
+
+        .navbar_second
+		{
+			display:flex;
+		}
+		
+		.nactive_second
+		{
+			padding-top:1vh;
+			width:10vw;
+			height:8.4vh;
+			text-align:center;
+		}
+		admin_connexion
+		{
+			background-color:white;
+		}
+		
+        .nactive_second a {
+            color: black; !important
+            text-shadow: black;
+			font-size:3vh;
+        }
+
+        .nactive_second a:hover 
+		{
+			color:rgb(30,144,255) ; !important
+			
+			background-color:rgb(30,144,255); !important
+			text-decoration: none; !important
+        }
+
+        .navbar-nav {
+            font-size: 2vh;
+        }
+
+        .navbar-brand {
+            font-size: 5vh !important;
+        }
+
+        .container-fluid {
+            margin-top: 1vh;
+        }
+
+        .container {
+            background-color: transparent;
+            color: rgb(210, 210, 210);
+            text-shadows: 1px 1px black;
+            height: 83vh;
+            text-align: center;
+            position: relative;
+            width: 98vw;
+        }
+		.container_top
+		{
+			margin-top:2vh;
+			background-color:transparent;
+            height: 38vh;
+            position: relative;
+            width: 96vw;
+			padding-top:1vh;
+			display:flex;
+		}
+		.container_bot
+		{
+			background-color:transparent;
+            height: 37vh;
+            position: relative;
+            width: 96vw;
+			padding-top:2vh;
+			text-align:left;
+		}
+		
+		.Q1{
+			position:absolute;
+			width:25vw;
+			height:37vh;
+			margin-left:3vw;
+			display:inline-block;
+			border: 1px solid black;
+			overflow-y:auto;
+			background-color:rgb(240,240,240);
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			padding-bottom:0.5vh;
+		}
+			.Q1_liste , .Q2_liste, .Q3_liste, .Q4_liste, .Q5_liste, .Q6_liste
+			{
+				margin-top:0.3vh;
+				display: flex;
+				border-radius:17px;
+				background-color:rgb(210,210,210);
+				text-shadow:2px 2px 2px white;
+				color:black;
+				font-size:3vh;
+				width:24.5vw;
+				height:5vh;
+			}
+			
+			.Q1_liste:hover , .Q2_liste:hover, .Q3_liste:hover, .Q4_liste:hover, .Q5_liste:hover, .Q6_liste:hover 
+			{
+				background-color:rgb(170,170,170);
+				box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			
+			}
+			
+			.Q1_check, .Q2_check, .Q3_check, .Q4_check, .Q5_check, .Q6_check
+			{
+				position:absolute;
+				width:23.7vw;
+				height:3.5vh;
+				background-color:transparent;
+				border-bottom-left-radius: 25px;
+				border-bottom-right-radius: 25px;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				border: none;
+				outline:none;
+				
+			}
+			input[type="checkbox"]:focus
+			{
+				outline:0;
+			}
+			.Q1_check:checked, .Q2_check:checked, .Q3_check:checked, .Q4_check:checked, .Q5_check:checked, .Q6_check:checked  
+			{
+				background: linear-gradient(to top,  rgb(31,100,31) 0%,rgb(31,100,31) 25%,transparent 25%,transparent 100%);
+			}
+			
+			.Crédits
+			{
+				width:5vw;
+				height:3vh;
+				text-align:center;
+				font-size:2.3vh;
+			}
+			.Nom_cours
+			{
+				width:15vw;
+				height:3vh;
+				text-align:center;
+				font-size:2.3vh;
+			}
+			.Nbr_heures
+			{
+				width:4vw;
+				height:3vh;
+				text-align:center;
+				font-size:2.3vh;
+			}
+				.Pres_cours
+				{
+					padding-top:0.5vh;
+					display: flex;
+					font-size:2vh;
+					width:20vw;
+					margin-left:2.25vw;
+					height:4vh;
+					background-color:rgb(170,170,170);
+					border: 0.1px solid black;
+					border-top:none;
+					color:black;
+				}
+					.Nom_pres_cours
+					{
+						width:17vw;
+						text-align:left;
+						padding-left:2vw;
+					}
+					.Nbr_heures_pres_cours
+					{
+						text-align:center;
+						width:3vw;
+					}
+			
+		.Q3{
+			background-color:rgb(240,240,240);
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			width:25vw;
+			height:37vh;
+			position:absolute;
+			display:inline-block;
+			border: 1px solid black;
+			margin-left:35.5vw;
+			padding-bottom:0.5vh;
+		}
+		
+		.Q5{
+			background-color:rgb(240,240,240);
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			width:25vw;
+			height:37vh;
+			position:absolute;
+			margin-left:67.5vw;
+			display:inline-block;
+			border: 1px solid black;
+			padding-bottom:0.5vh;
+		}
+		
+		.Q2{
+			background-color:rgb(240,240,240);
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			width:25vw;
+			height:37vh;
+			position:absolute;
+			margin-right:7vw;
+			margin-left:3.3vw;
+			display:inline-block;
+			border: 1px solid black;
+			padding-bottom:0.5vh;
+		}
+		.Q4{
+			background-color:rgb(240,240,240);
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			width:25vw;
+			height:37vh;
+			position:absolute;
+			display:inline-block;
+			border: 1px solid black;
+			margin-left:35.5vw;
+			padding-bottom:0.5vh;
+		}
+		.Q6{
+			background-color:rgb(240,240,240);
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+			width:25vw;
+			height:15vh;
+			position:absolute;
+			margin-left:67.5vw;
+			display:inline-block;
+			border: 1px solid black;
+			padding-bottom:0.5vh;
+		}
+		.container_end
+		{
+			background-color:rgb(160,160,160);
+			width:25vw;
+			height:15vh;
+			position:absolute;
+			margin-left:68vw;
+			margin-top:65vh;
+			text-align:left;
+			border-radius:30px;
+			border: 1px solid black;
+			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.54), 0 17px 50px 0 rgba(0,0,0,0.29);
+		}
+		.container_P_total
+		{
+			width:15vw;
+			height:11vh;
+			margin-top:2vh;
+			margin-left:1vw;
+			display:inline-block;
+		}
+			.text_total
+			{
+				position:absolute;
+				font-size:5vh;
+				margin-top:2vh;
+				padding-left:1vw;
+				text-shadow:1px 1px white;
+				color:black;
+			}
+			.btn_continue
+			{
+				background-color:rgb(80,80,80);
+				width:7vw;
+				margin-left:1vw;
+				margin-top:3vh;
+				color:white;
+				text-shadow:1px 1px black;
+				height:10vh;
+				display:inline-block;
+				position:absolute;
+				border-radius:20px;
+			}
+		
+		::-webkit-scrollbar
+		{
+			width: 4px;
+			background-color: transparent;
+		} 
+		::-webkit-scrollbar-thumb
+		{
+			border-radius: 10px;
+			-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+			background-color: rgb(140,140,140);
+		}
+		::-webkit-scrollbar-button
+		{
+			background-color: rgb(80,80,80);
+			border-radius:60px;
+		}
+		::-webkit-scrollbar-thumb:hover
+		{
+			background-color: rgb(200,200,200);
+		}
+		::-webkit-scrollbar-thumb:active
+		{
+			background-color: rgb(0, 0, 0);
+		}
+		
+		.dropdown:hover .dropdown-content {
+            display: block;
+        }
+		
+		.dropdown {
+			margin-left:40vw;
+            position: relative;
+            display: inline-block;
+        }
+
+       .dropdown-content {
+            display: none;
+            position: absolute;
+			background: white;
+			 box-shadow: 0 -5px 5px -5px transparent, 0 0 -5px rgba(0,0,0,0.60);   
+			box-shadow-top:none;
+			border:3px solid rgb(30,144,255);
+			border-top:3px solid white;
+			color: rgb(210, 210, 210);
+            text-shadow: 1px 1px black;
+            width: 11vw;
+            height: 17vh;
+            text-align: center;
+            z-index: 1;
+			margin-left:2vw;
+			
+				border-bottom-left-radius: 55px;
+				border-bottom-right-radius: 55px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            text-decoration: none;
+            display: block;
+			
+        }
+		
+		.dropdown-content input
+		{
+			color:black;
+		}
+		
+		
+		.Q1_liste:hover .Q1_check
+		{
+			background: linear-gradient(to top,  rgb(31,100,31) 0%,rgb(31,100,31) 25%,transparent 25%,transparent 100%);
+		}
+		
+		.Q1_check:checked .dropdown-content_cours {
+            display: block;
+        }
+		
+		.dropdown_cours {
+            position: relative;
+            display: inline-block;
+        }
+
+       .dropdown-content_cours {
+            position: static;
+            text-align: center;
+            z-index: 1;
+			
+        }
+
+        .dropdown-content_cours a {
+            text-decoration: none;
+            display: block;
+			
+        }
+		
+		
+		
+    </style>
+</head>
+<body>
+
+<nav class="navbar ">
+    <div class="container-fluid">
+        <div class="navbar-header">
+           <img src="HELB-Prigogine.png" alt="helb icone" class="image_nav">
+        </div>
+        <div class="navbar_second ">
+            <div class="nactive_second "><a href="../HTML/swipe.html">A voir</a></div>
+            <div class="nactive_second"><a href="../HTML/liste.html">A voir</a></div>
+            <div class="nactive_second"><a href="../HTML/message.html">A voir</a></div>
+			<div class='dropdown'>
+				<div class="nactive_second admin_connexion"><a href="">Admin</a></div>
+                <div class='dropdown-content'>
+					<p>Email : <input type='email' name='mail' minlength='1' maxlength='64' class='drop_input'></p>
+					<p>Password : <input type='password' name='password' minlength='1' class='drop_input'></p>
+					<input type='submit' value='Connect' class='drop_load'>
+                </div>
+            </div>
+		</div>
+        <ul class="nav navbar-nav nright">
+			    
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+	<div class="container_end">
+		<div class="container_P_total">
+			<p class="text_total">TOTAL : /O\ </p>
+		</div>
+		<input type="submit" value="Continuer" class="btn_continue">
+		
+		
+	</div>
+	
+	<div class="container_top">
+		<div class="Q1">
+			<button class="Q1_liste" id="cours_m" onclick="setColor('cours_m','dropdown_cours_m' )">
+				<div  class="Crédits">7</div>
+				<div class="Nom_cours">Cours de musique </div>
+				<div class="Nbr_heures"> 20</div>
+			</button>		
+			<div class='dropdown_cours' >
+				<div class='dropdown_content_cours' id="dropdown_cours_m">
+					<div class="Pres_cours">
+						<div class="Nom_pres_cours">cours de guitare </div>
+						<div class="Nbr_heures_pres_cours">12 </div>
+					</div>
+					<div class="Pres_cours">
+						<div class="Nom_pres_cours">cours de guitare </div>
+						<div class="Nbr_heures_pres_cours">12 </div>
+					</div>
+					<div class="Pres_cours">
+						<div class="Nom_pres_cours">cours de guitare </div>
+						<div class="Nbr_heures_pres_cours">12 </div>
+					</div>
+				</div>
+			</div>
+				
+			
+			
+			
+			<button class="Q1_liste" id="cours_s" onclick="setColor('cours_s','dropdown_cours_s' )">
+				<div  class="Crédits">7</div>
+				<div class="Nom_cours">Cours de musique </div>
+				<div class="Nbr_heures"> 20</div>
+			</button>		
+			<div class='dropdown_cours' id="dropdown_cours_s">
+				<div class='dropdown-content_cours'>
+					<div class="Pres_cours">
+						<div class="Nom_pres_cours">cours de guitare </div>
+						<div class="Nbr_heures_pres_cours">12 </div>
+					</div>
+					<div class="Pres_cours">
+						<div class="Nom_pres_cours">cours de guitare </div>
+						<div class="Nbr_heures_pres_cours">12 </div>
+					</div>
+					<div class="Pres_cours">
+						<div class="Nom_pres_cours">cours de guitare </div>
+						<div class="Nbr_heures_pres_cours">12 </div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<button class="Q1_liste">
+				<div  class="Crédits">7</div>
+				<div class="Nom_cours">Cours de musique </div>
+				<div class="Nbr_heures"> 20</div>
+			</button>
+			<button class="Q1_liste">
+				<div  class="Crédits">7</div>
+				<div class="Nom_cours">Cours de musique </div>
+				<div class="Nbr_heures"> 20</div>
+			</button>
+			<button class="Q1_liste">
+				<div  class="Crédits">7</div>
+				<div class="Nom_cours">Cours de musique </div>
+				<div class="Nbr_heures"> 20</div>
+			</button>
+			<button class="Q1_liste">
+				<div  class="Crédits">7</div>
+				<div class="Nom_cours">Cours de musique </div>
+				<div class="Nbr_heures"> 20</div>
+			</button>
+		</div>
+		<div class="Q3">
+			<button class="Q3_liste">
+				<div class="Crédits">/O\</div>
+				<div class="Nom_cours">/O\</div>
+				<div class="Nbr_heures"> </div>
+			</button>
+		</div>
+		<div class="Q5">
+			<button class="Q5_liste">
+				<div class="Crédits">/O\</div>
+				<div class="Nom_cours">/O\</div>
+				<div class="Nbr_heures"> </div>
+			</button>
+		</div>
+	
+	</div>
+        
+	<div class="container_bot">
+		<div class="Q2">
+			<button class="Q2_liste">
+				<div class="Crédits">12</div>
+				<div class="Nom_cours">Cours de botannique</div>
+				<div class="Nbr_heures"> 6</div>
+			</button>
+			<button class="Q2_liste">
+				<div class="Crédits">12</div>
+				<div class="Nom_cours">Cours de botannique</div>
+				<div class="Nbr_heures"> 6</div>
+			</button>
+			<button class="Q2_liste">
+				<div class="Crédits">12</div>
+				<div class="Nom_cours">Cours de botannique</div>
+				<div class="Nbr_heures"> 6</div>
+			</button>
+			<button class="Q2_liste">
+				<div class="Crédits">12</div>
+				<div class="Nom_cours">Cours de botannique</div>
+				<div class="Nbr_heures"> 6</div>
+			</button>
+			<button class="Q2_liste">
+				<div class="Crédits">12</div>
+				<div class="Nom_cours">Cours de botannique</div>
+				<div class="Nbr_heures"> 6</div>
+			</button>
+		</div>
+		<div class="Q4">
+			<button class="Q4_liste">
+				<div class="Crédits">/O\</div>
+				<div class="Nom_cours">/O\</div>
+				<div class="Nbr_heures"> </div>
+			</button>
+		</div>
+		<div class="Q6">
+			<button class="Q6_liste">
+				<div class="Crédits">/O\</div>
+				<div class="Nom_cours">/O\</div>
+				<div class="Nbr_heures"> </div>
+			</button>
+		</div>
+	
+	</div>
+	
+	
+		
+    
+</div>
+
+
+<div class="footer">
+    <a href="mailto:milleraph@hotmail.be?subject=Contact%20Site%20Coeur%20de%20foudre">Contact us</a>
+</div>
+
+
+</body>
+</html>
